@@ -1,0 +1,14 @@
+{:skip-comments true
+
+ :hooks   {:analyze-call {rum.core/defc  hooks.rum/defc
+                          rum.core/defcs hooks.rum/defcs
+
+                          better-cond.core/cond hooks.better-cond/cond}}
+ :lint-as {rum.core/defcc rum.core/defc
+
+           mount.core/defstate clojure.core/def
+
+           better-cond.core/if-let clojure.core/let
+           better-cond.core/when-let clojure.core/let
+
+           mk.jobs.tasks.tasks/deftask clojure.core/defn}}
